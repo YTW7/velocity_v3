@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-input::-webkit-outer-spin-button,
+     input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -22,3 +21,23 @@ input::-webkit-inner-spin-button {
     color: rgb(243 244 246) !important;
 }
 
+.open-btn{
+	         
+
+        background-image: linear-gradient(to right, #7300ff 0%, #000000  51%, #7300ff  100%);
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        /* border-radius: 10px; */
+
+      }
+
+      .open-btn:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+     

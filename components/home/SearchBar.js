@@ -4,6 +4,7 @@ const SearchBar = () => {
     return (
         <div className="border-b  border-gray-200 px-6 pb-6">
             <div className="flex items-center space-x-3 ">
+           
                 <MagnifyingGlassIcon className="h-5 w-5 text-[#9f9f9f]" />
                 <input className="flex-1 text-gray-600 placeholder-[#9f9f9f] outline-none rounded-lg px-2" type="text" placeholder="Search" />
             </div>

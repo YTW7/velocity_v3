@@ -44,7 +44,7 @@ const Hero = () => {
           }}
         >
           <Image
-            src="/2.jpg"
+            src="/bg.png"
             className="rounded-3xl"
             alt="Mountains with snow"
             layout="fill"
@@ -55,23 +55,25 @@ const Hero = () => {
           <h1
             style={{
               paddingTop: "20vh",
-              fontFamily: "monospace",
+              fontFamily: "",
               fontSize: "3.5rem",
               fontWeight: "bold",
               textAlign: "center",
+              color:"white",
             }}
           >
-            Start a New Journey
-            <p>With buzz... </p>
+            Socializing Made Fun
+            <p>With <i>Velocity</i> </p>
           </h1>
+          <br/>
           <div class="flex justify-center">
             {isPublicKey ? (
               <>
                 {initialized ? (
                   <>
                     <button
-                      onClick={() => router.push("/main")}
-                      class={`md:mr-5 bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
+                      onClick={() => router.push("/people")}
+                      class={`open-btn md:mr-5 bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
                     >
                       <span>DIVE IN</span>
                       <BsArrowRight className="ml-1 w-5 text-3xl" />

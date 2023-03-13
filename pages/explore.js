@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import { BsArrow90DegLeft } from "react-icons/bs";
 import Header from "../buzz_component/InsideComponent/Header";
+import {Oval} from "react-loader-spinner"
 const upload = () => {
   const {
     addVideo,
@@ -36,6 +37,7 @@ const upload = () => {
   };
   return (
     <>
+    <div className="bg-[url('/bg.png')] rounded-t-2xl bg-cover ">
       <ToastContainer
         position="bottom-left"
         autoClose={5000}
@@ -54,20 +56,24 @@ const upload = () => {
           <>
             <button
               onClick={() => switchView()}
-              class="text-black bg-white py-2 px-8 mt-5 mr-5 rounded-full"
+              class="text-white bg-purple-900 py-2 px-8 mt-5 mr-5 rounded-full inline-flex"
             >
-              <BsArrow90DegLeft />
+              GO BACK
+              <BsArrow90DegLeft className="pl-2"/>
+          
             </button>
           </>
         ) : (
           <>
             <button
               onClick={() => switchView()}
-              class="text-black bg-white py-2 px-8 mt-5 mr-5 rounded-full"
-            >
-              <AiOutlinePlus />
+              class="text-white bg-purple-900 py-2 px-8 mt-5 mr-5 rounded-full"
+            >Upload Here
+              <AiOutlinePlus className="ml-2 justify-center inline-flex items-center" />
+              
             </button>
-            <h2 className="mt-2 mr-5">Upload Here!!</h2>
+
+            {/* <h2 className="mt-2 mr-5">Upload</h2> */}
           </>
         )}
       </div>
@@ -76,7 +82,7 @@ const upload = () => {
         <>
           <section class="text-gray-600 body-font relative my-18" id="login">
             <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
-              <div class="lg:w-2/3 md:w-1/2  bg-[url('/3.jpg')] rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+              <div class="lg:w-2/3 md:w-1/2  bg-[url('/bg.png')] rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                 <div
                   style={{
                     zIndex: -1,
@@ -85,13 +91,7 @@ const upload = () => {
                     height: "100vh",
                   }}
                 >
-                  <Image
-                    src="/3.jpg"
-                    className="rounded-3xl"
-                    alt="Mountains with snow"
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                 
                 </div>
                 <div
                   width="50%"
@@ -104,14 +104,14 @@ const upload = () => {
                   scrolling="no"
                 >
                   <h2 className="flex flex-col items-end mx-10  justify-end text-white text-8xl mt-10">
-                    Upload
+                    Share Media
                   </h2>
                   <h2 className="flex flex-col items-end mx-10 justify-end text-white text-6xl mt-5">
-                    your videos
+                    with the world
                   </h2>
-                  <h2 className="flex flex-col items-end mx-10 justify-end text-yellow-400 text-5xl mt-5">
-                    start your new journey !!!!
-                  </h2>
+                  {/* <h2 className="flex flex-col items-end mx-10 justify-end text-yellow-400 text-5xl mt-5">
+                    Upload Your Videos
+                  </h2> */}
                 </div>
               </div>
               <div class="lg:w-2/6 md:w-1/2 bg-black rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10  md:mt-0 justify-center">
@@ -142,18 +142,21 @@ const upload = () => {
                 </div>
                 {loading ? (
                   <>
-                    <Image
-                      src="/yellowLoader.gif"
-                      width={50}
-                      height={50}
-                      className="m-auto"
-                    />
+                     <Oval
+                 ariaLabel="loading-indicator"
+                 height={100}
+                 width={100}
+                 strokeWidth={1}
+                 strokeWidthSecondary={2000}
+                 color="purple"
+                 secondaryColor="black"
+               />
                   </>
                 ) : (
                   <>
                     <button
                       onClick={() => uploadVideo()}
-                      class="bg-white text-black border-0 py-2 px-8 focus:outline-none rounded-full text-lg"
+                      class="bg-purple-900 text-black border-0 py-2 px-8 focus:outline-none rounded-full text-lg"
                     >
                       Upload
                     </button>
@@ -169,17 +172,22 @@ const upload = () => {
         </>
       ) : (
         <>
-          <h2 className="flex flex-col text-3xl justify-center items-center">
-            Explore !!!
-          </h2>
+        
+          <h1 className="flex flex-col text-3xl justify-center items-center">
+            Explore Videos Across The World
+          </h1>
           {videoLoading ? (
-            <>
-              <Image
-                src="/yellowLoader.gif"
-                width={50}
-                height={50}
-                className="m-auto mt-10"
-              />
+            <><div className='flex justify-center'>
+               <Oval
+                 ariaLabel="loading-indicator"
+                 height={100}
+                 width={100}
+                 strokeWidth={1}
+                 strokeWidthSecondary={2000}
+                 color="purple"
+                 secondaryColor="black"
+               />
+               </div>
             </>
           ) : (
             <>
@@ -190,11 +198,11 @@ const upload = () => {
                       <iframe
                         allow="autoplay; gyroscope;"
                         allowfullscreen
-                        className="w-1/2 aspect-square  object-fill rounded-3xl"
+                        className="w-1/4 aspect-square  object-fill rounded-3xl"
                         src={item.account.content}
                       ></iframe>
                       <div className="flex flex-wrap justify-start">
-                        <div className="w-6/12 sm:w-4/12 px-4">
+                        <div className="w-1/8 sm:w-4/12 px-4">
                           <img
                             src={item.account.profileUrl}
                             alt="..."
@@ -202,7 +210,7 @@ const upload = () => {
                           />
                         </div>
                         <div class="mt-2 text-center md:text-left">
-                          <h3 class="text-red-500 text-md mb-2 mt-5 title-font ">
+                          <h3 class="text-black fonr-bold text-md mb-2 mt-5 title-font ">
                             {item.account.userName}
                           </h3>
                         </div>
@@ -215,6 +223,7 @@ const upload = () => {
           )}
         </>
       )}
+      </div>
     </>
   );
 };

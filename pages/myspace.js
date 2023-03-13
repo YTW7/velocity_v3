@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../buzz_component/InsideComponent/Header";
 import { useBuzz } from "../Connector/buzz";
 import Image from "next/image";
+import {Oval} from "react-loader-spinner";
 const MySpace = () => {
   const {
     allStatus,
@@ -46,21 +47,31 @@ const MySpace = () => {
 
   return (
     <>
+    <div className="bg-[url('/bg.png')] rounded-t-2xl bg-cover ">
       <Header />
-      <div class="mx-4 bg-black p-2">
+      <div class="mx-4 bg-purple-900 rounded-t-xl p-2">
         <div
-          class="grid grid-cols-2 divide-x-4 
-                    "
+          class="grid grid-cols-3 divide-x-4 "
         >
           <div>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white flex flex-col items-center text-center ">
               Your Friends
             </h1>
             <div class="container px-5 py-5 mx-auto">
               <div class="flex flex-wrap -m-5 px-24 py-1 ">
                 {friendLoading ? (
                   <>
-                  <Image src="/yellowLoader.gif" width={50} height={50} className="m-auto"/>
+                  <div className='flex justify-center'>
+                  <Oval
+                 ariaLabel="loading-indicator"
+                 height={100}
+                 width={100}
+                 strokeWidth={1}
+                 strokeWidthSecondary={2000}
+                 color="white"
+                 secondaryColor="white"
+               />
+               </div>
                   </>
                 ) : (
                   <>
@@ -82,8 +93,8 @@ const MySpace = () => {
                                 </div>
                               </div>
                               <div class="mt-2 text-center md:text-left">
-                                <h3 class="text-red-500 text-md mb-2 title-font ">
-                                  Name - {item.account.name}
+                                <h3 class="text-purple-900 font-bold text-md mb-2 title-font ">
+                                  {item.account.name}
                                 </h3>
                                 <h3 class="text-black text-md  title-font ">
                                   Description - {item.account.description}
@@ -100,11 +111,11 @@ const MySpace = () => {
             </div>
           </div>
           <div>
-            <section class="text-gray-600 body-font">
+          <section class="text-gray-600 body-font">
               <div class="container px-2 py-5 mx-auto">
                 <div class="flex flex-wrap w-full mb-10 flex-col items-center text-center">
                   <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">
-                    see what others are talking about.....
+                    Share What's on your Mind
                   </h1>
                   <div
                     class="flex relative mb-3
@@ -113,19 +124,24 @@ const MySpace = () => {
                     <input
                       value={status}
                       onChange={statusHandler}
-                      placeholder="whats going on .....!!"
+                      placeholder="Write something"
                       type="text"
                       class="w-full bg-white rounded-full mt-2 border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
                     />
 
                     {loading ? (
                       <>
-                        <Image
-                          src="/yellowLoader.gif"
-                          width={50}
-                          height={50}
-                          className="m-auto mx-3"
-                        />
+                        <div className='flex justify-center'>
+                  <Oval
+                 ariaLabel="loading-indicator"
+                 height={100}
+                 width={100}
+                 strokeWidth={1}
+                 strokeWidthSecondary={2000}
+                 color="white"
+                 secondaryColor="white"
+               />
+               </div>
                       </>
                     ) : (
                       <>
@@ -143,13 +159,13 @@ const MySpace = () => {
                       onClick={() => setShowWhichStatus(true)}
                       class={`bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
                     >
-                      <span>ALL Thoughts</span>
+                      <span>Public Posts</span>
                     </button>
                     <button
                       onClick={() => setShowWhichStatus(false)}
                       class={`bg-white text-black py-4 px-10 rounded-3xl inline-flex items-center mx-10 mt-10 `}
                     >
-                      <span>My Thoughts</span>
+                      <span>Your Posts</span>
                     </button>
                   </div>
 
@@ -161,12 +177,17 @@ const MySpace = () => {
                       <>
                         {statusLoading ? (
                           <>
-                            <Image
-                              src="/yellowLoader.gif"
-                              width={50}
-                              height={50}
-                              className="m-auto"
-                            />
+                           <div className='flex justify-center'>
+                  <Oval
+                 ariaLabel="loading-indicator"
+                 height={100}
+                 width={100}
+                 strokeWidth={1}
+                 strokeWidthSecondary={2000}
+                 color="white"
+                 secondaryColor="white"
+               />
+               </div>
                           </>
                         ) : (
                           <>
@@ -192,7 +213,7 @@ const MySpace = () => {
                                         </div>
                                       </div>
                                       <div class="mt-2 text-center md:text-left">
-                                        <h3 class="text-red-500 text-md mb-2 title-font ">
+                                        <h3 class="text-purple-900 text-md mb-2 title-font ">
                                           Posted By {item.account.name}
                                         </h3>
                                         <h3 class="text-black text-md  title-font ">
@@ -250,6 +271,7 @@ const MySpace = () => {
             </section>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
