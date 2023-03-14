@@ -7,26 +7,23 @@ import { useState } from 'react'
 
 
 const Home = () => {
-    const { initialized, loading, transactionPending, completedTodos, incompleteTodos, addTodo, markTodo, removeTodo,   input,tag  , assigne  , tagHandleChange , assigneChangeHandler,  handleChange , initializeUser , selectTagFromTag } = useTodo()
+    const { initialized, initializeStaticUser, loading, transactionPending, completedTodos, incompleteTodos, addTodo, markTodo, removeTodo, markStaticTodo,removeStaticTodo, addStaticTodo, input,tag  , assigne  , tagHandleChange , assigneChangeHandler,  handleChange , initializeUser , selectTagFromTag } = useTodo()
 
     const [finalTag,setFinalTag] = useState("")
     const [finalAssigne,setFinalAssigne] = useState("")
     const [borderColor, setBorderColor] = useState("#ffb703")
     return (
-        <>
-        <h1 className='text-center' style={{marginLeft:"10px" , fontSize:"20px",color:"#ffb703"}}>Velocity Task Board</h1>
-        <div className="bg-[url('/bg.png')] rounded-t-2xl" >
-            <div>
+        <div>
             <div className={styles.actionsContainer}>
                 {initialized ? (
                     <div className={styles.todoInput}>
-                   
+                    <h1 className='text-center' style={{textAlign:"center",marginLeft:"10px" , fontSize:"20px",color:"#ffb703"}}>Velocity Task Board</h1>
                         <div className={`${styles.todoCheckbox} ${styles.checked}`} />
                         <div className={styles.inputContainer}>
                                  
-                                <input value = {input}  className="rounded-xl" style={{marginTop:"60rem",border:"3px solid #ccc",padding:"5px"}} onChange={handleChange} id={styles.inputField} type="text" placeholder=' Enter The Title ......' autocomplete="off" />
+                                <input value = {input} style={{marginTop:"60rem",border:"3px solid #ccc",padding:"5px"}} onChange={handleChange} id={styles.inputField} type="text" placeholder=' Enter The Title ......' autocomplete="off" />
                                
-                                <input value = {tag} className="rounded-xl" onChange={tagHandleChange}  style={{marginTop:"1rem",border:`2px solid ${borderColor}`,padding:"5px"}} id={styles.inputField} type="text" placeholder=' Enter The Tag (For ex : Urgent , Major)' />
+                                <input value = {tag} onChange={tagHandleChange}  style={{marginTop:"1rem",border:`2px solid ${borderColor}`,padding:"5px"}} id={styles.inputField} type="text" placeholder=' Enter The Tag (For ex : Urgent , Major)' />
                             
 
                                 <div>
@@ -78,7 +75,7 @@ const Home = () => {
 
                                 
                                 
-                                <input value = {assigne} className="rounded-xl"  onChange={assigneChangeHandler}  style={{marginTop:"1rem",border:"3px solid #ccc",padding:"5px"}} id={styles.inputField} type="text" placeholder=' Assigned To ....' autocomplete="off" />
+                                <input value = {assigne} onChange={assigneChangeHandler}  style={{marginTop:"1rem",border:"3px solid #ccc",padding:"5px"}} id={styles.inputField} type="text" placeholder=' Assigned To ....' autocomplete="off" />
                                  
                             
                             <button style={{backgroundColor:"skyblue",height:"50px",width:"150px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
@@ -99,7 +96,7 @@ const Home = () => {
                         Initialize
                     </button>
                 )}
-                <WalletMultiButton className='opacity-0'/>
+            
             </div>
 
             <div >
@@ -111,8 +108,6 @@ const Home = () => {
                 </Loading>
             </div>
         </div>
-        </div>
-        </>
     )
 }
 
