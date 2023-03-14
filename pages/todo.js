@@ -21,7 +21,7 @@ const Home = () => {
                         <div className={`${styles.todoCheckbox} ${styles.checked}`} />
                         <div className={styles.inputContainer}>
                                  
-                                <input value = {input} style={{marginTop:"60rem",border:"3px solid #ccc",padding:"5px"}} onChange={handleChange} id={styles.inputField} type="text" placeholder=' Enter The Title ......' autocomplete="off" />
+                                <input value = {input} style={{marginTop:"60rem",border:"3px solid #000000",padding:"5px"}} onChange={handleChange} id={styles.inputField} type="text" placeholder=' Enter The Title ......' autocomplete="off" />
                                
                                 <input value = {tag} onChange={tagHandleChange}  style={{marginTop:"1rem",border:`2px solid ${borderColor}`,padding:"5px"}} id={styles.inputField} type="text" placeholder=' Enter The Tag (For ex : Urgent , Major)' />
                             
@@ -75,7 +75,7 @@ const Home = () => {
 
                                 
                                 
-                                <input value = {assigne} onChange={assigneChangeHandler}  style={{marginTop:"1rem",border:"3px solid #ccc",padding:"5px"}} id={styles.inputField} type="text" placeholder=' Assigned To ....' autocomplete="off" />
+                                <input value = {assigne} onChange={assigneChangeHandler}  style={{marginTop:"1rem",border:"3px solid #000000",padding:"5px"}} id={styles.inputField} type="text" placeholder=' Assigned To ....' autocomplete="off" />
                                  
                             
                             <button style={{backgroundColor:"skyblue",height:"50px",width:"150px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
