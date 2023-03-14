@@ -13,12 +13,14 @@ const Home = () => {
     const [finalAssigne,setFinalAssigne] = useState("")
     const [borderColor, setBorderColor] = useState("#ffb703")
     return (
+        <>
+        <h1 className='text-center' style={{marginLeft:"10px" , fontSize:"20px",color:"#ffb703"}}>Velocity Task Board</h1>
         <div className="bg-[url('/bg.png')] rounded-t-2xl" >
             <div>
             <div className={styles.actionsContainer}>
                 {initialized ? (
                     <div className={styles.todoInput}>
-                    <h1 style={{textAlign:"left",marginLeft:"10px" , fontSize:"20px",color:"#ffb703"}}>PROJECT MANAGER DAPP POWERED BY SOLANA</h1>
+                   
                         <div className={`${styles.todoCheckbox} ${styles.checked}`} />
                         <div className={styles.inputContainer}>
                                  
@@ -110,6 +112,7 @@ const Home = () => {
             </div>
         </div>
         </div>
+        </>
     )
 }
 
