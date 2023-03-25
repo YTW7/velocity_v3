@@ -104,10 +104,10 @@ const upload = () => {
                   scrolling="no"
                 >
                   <h2 className="flex flex-col items-end mx-10  justify-end text-white text-8xl mt-10">
-                    Share Media
+                    Share Media without Restrictions
                   </h2>
                   <h2 className="flex flex-col items-end mx-10 justify-end text-white text-6xl mt-5">
-                    with the world
+                    over the world
                   </h2>
                   {/* <h2 className="flex flex-col items-end mx-10 justify-end text-yellow-400 text-5xl mt-5">
                     Upload Your Videos
@@ -173,8 +173,8 @@ const upload = () => {
       ) : (
         <>
         
-          <h1 className="flex flex-col text-3xl justify-center items-center">
-            Explore Videos Across The World
+          <h1 className="flex flex-col text-3xl justify-center items-center text-purple-900 font-bold">
+            Explore Content Across The World
           </h1>
           {videoLoading ? (
             <><div className='flex justify-center'>

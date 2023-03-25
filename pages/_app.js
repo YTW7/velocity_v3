@@ -16,8 +16,9 @@ function MyApp({ Component, pageProps }) {
                 <link rel="shortcut icon" href="/logo.png" type="image"/>
                 <title>Velocity | All-in-One Solana Dapp</title>
             </Head>
-            <WalletConnectionProvider>
             <Navbar/>
+            <WalletConnectionProvider>
+
             <Component {...pageProps} />
             </WalletConnectionProvider>
     </>

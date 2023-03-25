@@ -6,6 +6,9 @@
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
     cursor: pointer;
+    color:blueviolet;
+    padding: 20px;
+    margin-left: 100px;
  
 }
 

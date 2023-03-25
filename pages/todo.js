@@ -17,7 +17,7 @@ const Home = () => {
             <div className={styles.actionsContainer}>
                 {initialized ? (
                     <div className={styles.todoInput}>
-                    <h1 className='text-center' style={{textAlign:"center",marginLeft:"10px" , fontSize:"20px",color:"#ffb703"}}>Velocity Task Board</h1>
+                    <h1 className='flex flex-col items-center text-center text-purple-900 font-bold ' style={{textAlign:"center",marginLeft:"10px" , fontSize:"20px"}}>Velocity Task Board</h1>
                         <div className={`${styles.todoCheckbox} ${styles.checked}`} />
                         <div className={styles.inputContainer}>
                                  
@@ -27,45 +27,45 @@ const Home = () => {
                             
 
                                 <div>
-                                <button style={{backgroundColor:"lightgreen",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+                                <button className="text-purple-900 font-bold" style={{backgroundColor:"lightgreen",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("MAJOR")
                                setBorderColor("lightgreen")
                             }}>MAJOR</button>  
 
-                            <button style={{backgroundColor:"#EBB9DF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+                            <button className="text-purple-900 font-bold" style={{backgroundColor:"#EBB9DF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("URGENT")
                                setBorderColor("#EBB9DF")
                             }}>URGENT</button> 
 
-<button style={{backgroundColor:"#FD3E81",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#FD3E81",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("BUG")
                                setBorderColor("#FD3E81")
                             }}>BUG</button>
 
-<button style={{backgroundColor:"#EB9486",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#EB9486",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("NEW")
                                setBorderColor("#EB9486")
                             }}>NEW</button>
 
                             
-<button style={{backgroundColor:"#F3DE8A",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#F3DE8A",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("MINOR")
                                setBorderColor("#F3DE8A")
                             }}>MINOR</button>
 
                             
-<button style={{backgroundColor:"#C792DF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#C792DF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("TEAM")
                                setBorderColor("#C792DF")
                             }}>TEAM</button>
 
                                
-<button style={{backgroundColor:"#A2D2FF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#A2D2FF",height:"35px",width:"80px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("HELP")
                                setBorderColor("#A2D2FF")
                             }}>HELP</button>
 
-<button style={{backgroundColor:"#f77f00",height:"35px",width:"100px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+<button className="text-purple-900 font-bold" style={{backgroundColor:"#f77f00",height:"35px",width:"100px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                selectTagFromTag("NEED TALK")
                                setBorderColor("#f77f00")
                             }}>NEED TALK</button>
@@ -78,7 +78,7 @@ const Home = () => {
                                 <input value = {assigne} onChange={assigneChangeHandler}  style={{marginTop:"1rem",border:"3px solid #000000",padding:"5px"}} id={styles.inputField} type="text" placeholder=' Assigned To ....' autocomplete="off" />
                                  
                             
-                            <button style={{backgroundColor:"skyblue",height:"50px",width:"150px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
+                            <button className="text-purple-900 font-bold" style={{backgroundColor:"skyblue",height:"50px",width:"150px",marginLeft:"15px",borderRadius:"10px",marginTop:"20px"}} onClick={()=>{
                                 addTodo()
                                 setFinalTag(tag)
                                 setFinalAssigne(assigne)
@@ -93,7 +93,7 @@ const Home = () => {
                     </div>
                 ) : (
                     <button type="button" className={styles.button} onClick={() => initializeUser()} disabled={transactionPending}>
-                        Initialize
+                        <b>INITIALIZE USER</b>
                     </button>
                 )}
             
@@ -107,7 +107,9 @@ const Home = () => {
                     <TodoSection title="Completed" todos={completedTodos} assigne = {finalAssigne} tag={finalTag} action={removeTodo} />
                 </Loading>
             </div>
+            <br/>
         </div>
+        
     )
 }
 

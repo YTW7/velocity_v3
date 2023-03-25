@@ -98,7 +98,7 @@ const Home = () => {
                    </div>
                 </div> */}
                 
-                {/* <TransactionQRModal modalOpen={transactionQRModalOpen} setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} myKey={publicKey} setQrCode={setQrCode} /> */}
+                <TransactionQRModal modalOpen={transactionQRModalOpen} setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} myKey={publicKey} setQrCode={setQrCode} />
 
                 <NavMenu connected={connected} publicKey={publicKey} />
                 {/* <Profile setModalOpen={setTransactionQRModalOpen} avatar={avatar} userAddress={userAddress} />
