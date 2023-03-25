@@ -12,7 +12,6 @@ import { getAvatarUrl } from '../../functions/getAvatarUrl';
 const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode }) => {
 
     const {transactions, setTransactions} =useCashApp()
-
     const qrRef=useRef()
     const {connection}=useConnection()
     // Set the state to true to rerender the component with generated QR
@@ -22,10 +21,10 @@ const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode })
     
     useEffect(()=>{
         const recipient= new PublicKey(userAddress)
-        const amount= new BigNumber("1")
+        const amount=""
         const reference=Keypair.generate().publicKey
-        const label="cookie inc"
-        const message="Thanks for the payment!"
+        const label="Velocity Payments"
+        const message="Thanks for the Payment!"
 
         const urlParams={
             recipient,
@@ -43,7 +42,7 @@ const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode })
         }
 
         const interval=setInterval(async () => {
-            console.log("waiting for transaction confirmation")
+            // console.log("waiting for transaction confirmation")
             try{
                 const signatureInfo = await findReference(connection, reference, {finality:'confirmed'})
                 console.log('valdiating')
@@ -60,7 +59,7 @@ const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode })
 
 
                 //let's add the transaction to local storage
-                const newID = (transactions.lenght + 1).toString()
+                const newID = (transactions.length + 1).toString()
                 const newTransaction = {
                     id: newID,
                     from: {
@@ -103,7 +102,8 @@ const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode })
 
         return () => clearInterval(interval)
     })
-
+    
+   
 
     return (
         <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
@@ -111,7 +111,6 @@ const TransactionQRModal = ({ modalOpen, setModalOpen, userAddress, setQrCode })
                 <div className="flex flex-col items-center justify-center space-y-1">
                     <div ref={qrRef}/>
                 </div>
-
                 <div className="flex flex-col items-center justify-center space-y-1">
                     <p className="text-lg font-medium text-gray-800">{truncate(userAddress)}</p>
 

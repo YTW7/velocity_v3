@@ -15,8 +15,6 @@ import Payments from '../components/header/Payments'
 import Navbar from '../components/header/Navbar'
 
 const Home = () => {
-    // const { connected, publicKey } = useWallet()
-    
     
     const [transactionQRModalOpen, setTransactionQRModalOpen] = useState(false)
     const [qrCode,setQrCode]=useState(false)
@@ -38,16 +36,16 @@ const Home = () => {
         <>
         <div>
         <section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-5">
-      <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-4">Dapp Experience Redefined</h1>
-      <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-4">with <i>Velocity</i></h1>
-      <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-20">Exclusively on Solana</h1>
-    </div>
-   <a href="/"> <button class="open-btn flex mx-auto mt-5 font-bold text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">See Demo</button>
-   </a>
-  </div>
-</section>
+         <div class="container px-5 py-24 mx-auto">
+           <div class="text-center mb-5">
+             <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-4">Dapp Experience Redefined</h1>
+             <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-4">with <i>Velocity</i></h1>
+             <h1 class="sm:text-6xl font-medium text-center title-font text-gray-900 mb-20">Exclusively on Solana</h1>
+           </div>
+          <a href="/"> <button class="open-btn flex mx-auto mt-5 font-bold text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">See Demo</button>
+          </a>
+         </div>
+       </section>
                 </div>
         </>
       );
@@ -90,23 +88,12 @@ const Home = () => {
         <div className="flex ">
             <header className="flex w-[250px] flex-col bg-[#9945ff] p-12 rounded-tl-2xl">
                 
-                {/* <div className='my-10px'>
-                    <div className="flex cursor-pointer flex-col items-center space-y-3">
-                       <div className="h-16 w-16 rounded-lg border-2 border-white">
-                           <img className="h-full w-full rounded-lg object-cover" src="logo.png" />
-                       </div>
-                   </div>
-                </div> */}
-                
-                <TransactionQRModal modalOpen={transactionQRModalOpen} setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} myKey={publicKey} setQrCode={setQrCode} />
-
                 <NavMenu connected={connected} publicKey={publicKey} />
-                {/* <Profile setModalOpen={setTransactionQRModalOpen} avatar={avatar} userAddress={userAddress} />
-                <br/> */}
-               
                 <Action setModalOpen={setNewTransactionModalOpen} />
                 <NewTransactionModal modalOpen={newTransactionModalOpen} setModalOpen={setNewTransactionModalOpen} />
                 <GenQR setModalOpen={setTransactionQRModalOpen} userAddress={userAddress}/>
+                <TransactionQRModal modalOpen={transactionQRModalOpen} setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} myKey={publicKey} setQrCode={setQrCode} />
+
                 
             </header>
 
@@ -114,11 +101,6 @@ const Home = () => {
             {Navbar()}
             {paymentsTab ? PaymentsTab() : HomeTab()}
             </main>
-            {/* <main className="flex flex-1 flex-col">
-                <SearchBar />
-
-                <TransactionsList connected={connected} transactions={transactions} />
-            </main> */}
         </div>
     )
 }
