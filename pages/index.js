@@ -91,7 +91,7 @@ const Home = () => {
                 <NavMenu connected={connected} publicKey={publicKey} />
                 <Action setModalOpen={setNewTransactionModalOpen} />
                 <NewTransactionModal modalOpen={newTransactionModalOpen} setModalOpen={setNewTransactionModalOpen} />
-                <GenQR setModalOpen={setTransactionQRModalOpen} userAddress={userAddress}/>
+                <GenQR setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} setQrCode={setQrCode}/>
                 <TransactionQRModal modalOpen={transactionQRModalOpen} setModalOpen={setTransactionQRModalOpen} userAddress={userAddress} myKey={publicKey} setQrCode={setQrCode} />
 
                 

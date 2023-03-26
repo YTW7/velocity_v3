@@ -1,10 +1,11 @@
 import React from 'react'
 import { useCashApp } from '../../hooks/cashapp'
 
-const GenQR = ({ setModalOpen, userAddress }) => {
+const GenQR = ({ setModalOpen, userAddress, setQrCode }) => {
 
     const onProfileOpen = () => {
         setModalOpen(true)
+        setQrCode(false)
     }
 
     const {amount, setAmount, receiver, setReceiver, transactionPurpose, setTransactionPurpose, doTransaction}=useCashApp()
