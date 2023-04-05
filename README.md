@@ -1,6 +1,6 @@
 # Velocity
 **The All-in-One Dapp on Solana**
-<p align="left">
+<p left="0">
   <a href="https://twitter.com/solanavelocity">
     <img
       alt="Velocity"
