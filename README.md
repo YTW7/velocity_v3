@@ -1,4 +1,4 @@
-# Velocity
+# *Velocity*
 **The All-in-One Dapp on Solana**
 <p left="0">
   <a href="https://twitter.com/solanavelocity">
