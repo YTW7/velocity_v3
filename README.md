@@ -6,7 +6,7 @@ be it:
 2. Seamless Payments interface with Human-Readable Txn. History
 3. On-Chain Task Board
 
-*Under Development:*
+###*Under Development:*
 4. On-Chain DAO management
 5. No-code NFTs & Tokens minting
 6. Integrated Wallet
