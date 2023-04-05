@@ -1,5 +1,6 @@
 # Velocity
 **The All-in-One Dapp on Solana**
+
 Velocity is the one-stop platform for all your Solana utilties, 
 be it:
 1. On-Chain Social Media
