@@ -1,5 +1,6 @@
 # Velocity
 **The All-in-One Dapp on Solana**
+![My Image](public/logo.png)
 
 Velocity is the one-stop platform for all your Solana utilties, 
 be it:
