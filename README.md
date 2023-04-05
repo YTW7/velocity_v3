@@ -1,6 +1,14 @@
 # Velocity
 **The All-in-One Dapp on Solana**
-![My Image](public/logo.png)
+<p align="center">
+  <a href="https://twitter.com/solanavelocity">
+    <img
+      alt="Velocity"
+      src="public/logo.png"
+      width="160"
+    />
+  </a>
+</p>
 
 Velocity is the one-stop platform for all your Solana utilties, 
 be it:
