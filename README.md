@@ -5,7 +5,8 @@ be it:
 1. On-Chain Social Media
 2. Seamless Payments interface with Human-Readable Txn. History
 3. On-Chain Task Board
-_Under Development:_
+
+*Under Development:*
 4. On-Chain DAO management
 5. No-code NFTs & Tokens minting
 6. Integrated Wallet
